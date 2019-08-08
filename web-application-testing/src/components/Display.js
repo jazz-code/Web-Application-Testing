@@ -6,9 +6,9 @@ const Display = props => {
   return (
     <div>
       <h1>Display</h1>
-      <p>Strikes: {strike}</p>
-      <p>Balls: {ball}</p>
-      <p>Hits: {hit}</p>
+      <p data-testid="strikevalue">Strikes: {strike}</p>
+      <p data-testid="ballvalue">Balls: {ball}</p>
+      <p data-testid="hitvalue">Hits: {hit}</p>
     </div>
   );
 };
