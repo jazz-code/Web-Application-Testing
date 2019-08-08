@@ -21,7 +21,7 @@ function App() {
     hit = 0;
     return ball && strike && hit;
   };
-  if (ball === 4 || strike === 3 || hit === 1) {
+  if (ball === 4 || strike === 3) {
     setCount(reset(count));
     setBall(reset(ball));
     setStrike(reset(strike));
@@ -29,14 +29,28 @@ function App() {
     setFoul(reset(foul));
   }
 
+  // if (foul < 3) {
+  //   setStrike(strike + 1) && setFoul(foul + 1)
+  // } else {
+
+  // }
+
   return (
     <div className="App">
-      <Display strike={strike} ball={ball} setStrike={setStrike} />
+      <Display
+        strike={strike}
+        ball={ball}
+        setStrike={setStrike}
+        hit={hit}
+        setHit={setHit}
+      />
       <Dashboard
         strike={strike}
         ball={ball}
         setStrike={setStrike}
         setBall={setBall}
+        hit={hit}
+        setHit={setHit}
       />
     </div>
   );
