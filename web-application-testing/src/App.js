@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Display from "./components/Display";
+import Dashboard from "./components/Dashboard";
 
 import "./App.css";
 
@@ -10,7 +11,7 @@ function App() {
   const [hit, setHit] = useState(0);
   const [foul, setFoul] = useState(0);
 
-  // console.log(ball);
+  // console.log("setStrike", setStrike);
   //**----Count Rules----**/
 
   //reset function
@@ -30,7 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <Display strike={strike} ball={ball} />
+      <Display strike={strike} ball={ball} setStrike={setStrike} />
+      <Dashboard
+        strike={strike}
+        ball={ball}
+        setStrike={setStrike}
+        setBall={setBall}
+      />
     </div>
   );
 }
