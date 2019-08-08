@@ -5,35 +5,26 @@ import Dashboard from "./components/Dashboard";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [ball, setBall] = useState(0);
   const [strike, setStrike] = useState(0);
   const [hit, setHit] = useState(0);
   const [foul, setFoul] = useState(0);
 
-  // console.log("setStrike", setStrike);
   //**----Count Rules----**/
-
-  //reset function
-  const reset = (ball, strike, hit) => {
+  //**-- Reset Function-- */
+  const resetScore = (ball, strike, hit) => {
     ball = 0;
     strike = 0;
     hit = 0;
     return ball && strike && hit;
   };
-  if (ball === 4 || strike === 3) {
-    setCount(reset(count));
-    setBall(reset(ball));
-    setStrike(reset(strike));
-    setHit(reset(hit));
-    setFoul(reset(foul));
+  //*-- If 4 balls or 3 strikes or 1 hit, reset --*/
+  if (ball === 4 || strike === 3 || hit === 1) {
+    setBall(resetScore(ball));
+    setStrike(resetScore(strike));
+    setHit(resetScore(hit));
+    setFoul(resetScore(foul));
   }
-
-  // if (foul < 3) {
-  //   setStrike(strike + 1) && setFoul(foul + 1)
-  // } else {
-
-  // }
 
   return (
     <div className="App">
