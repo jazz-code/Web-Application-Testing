@@ -6,9 +6,18 @@ const Dashboard = props => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <button onClick={() => setStrike(strike + 1)}>Strike </button>
-      <button onClick={() => setBall(ball + 1)}>Ball </button>
-      <button onClick={() => setHit(hit + 1)}>Hit </button>
+      <button
+        data-testid="incrementButton"
+        onClick={() => setStrike(strike + 1)}
+      >
+        Strike
+      </button>
+      <button data-testid="incrementButton" onClick={() => setBall(ball + 1)}>
+        Ball
+      </button>
+      <button data-testid="incrementButton" onClick={() => setHit(hit + 1)}>
+        Hit
+      </button>
     </div>
   );
 };
